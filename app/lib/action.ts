@@ -95,15 +95,13 @@ export async function updateInvoice(id: string, formData: FormData) {
   }
 
   export async function deleteInvoice(id: string) {
-    throw new Error('Unable to delete invoice');
+    // throw new Error('Unable to delete invoice');
     try{
       await sql`DELETE FROM invoices WHERE id = ${id}`;
       revalidatePath('/dashboard/invoices');
     }
     catch(err) {
-      return { 
-        msg : err.message
-      }
+      throw Error(`err`);
     }
   }
 
