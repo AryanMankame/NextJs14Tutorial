@@ -1,8 +1,14 @@
 import React from 'react'
 
-function Page() {
+async function Page({
+  searchParams
+} : {
+  searchParams? : {
+    query : string
+  }
+}) {
   return (
-    <div>Customers Page</div>
+    <div>Customers Page{searchParams?.query}</div>
   )
 }
 
